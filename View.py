@@ -20,7 +20,10 @@ class Application(tk.Frame):
         self.label.delete(0,'end')
         sorteado = random.choice(li)
         if sorteado in ganhadores:
-            self.sortear()
+            try:
+                self.sortear()
+            except RuntimeError:
+                print ("Todas as pessoas foram sorteadas!")
         else:
 
             ganhadores.append(sorteado)
